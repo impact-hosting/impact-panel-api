@@ -1,14 +1,15 @@
 from falcon import App
 
-from impact_api.api.middleware import SessionMiddleware
+from impact_api.api.middleware import (SessionMiddleware, SchemaMiddleware)
 from impact_api.api.controllers import UsersNamespace
 
 
 MIDDLEWARE = [
-    SessionMiddleware()
+    SessionMiddleware(),
+    SchemaMiddleware()
 ]
 ROUTES = [
-    ('/users', UsersNamespace)
+    ('/users', UsersNamespace())
 ]
 app = App(cors_enable=True)
 

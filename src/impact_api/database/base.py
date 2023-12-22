@@ -3,10 +3,6 @@ from abc import ABC, abstractmethod
 
 class BaseDatabase(ABC):
     @abstractmethod
-    def __init__(self):
-        pass
-
-    @abstractmethod
     def get(self):
         pass
 
