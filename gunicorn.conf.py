@@ -2,7 +2,7 @@ import multiprocessing
 
 
 wsgi_app = 'impact_api:app'
-bind = 'localhost:5000'
+bind = 'localhost:3001'
 workers = multiprocessing.cpu_count() * 2 + 1
 reload = True
 worker_class = 'eventlet'
