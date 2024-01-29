@@ -1,0 +1,22 @@
+version: '3'
+services:
+  impact-api:
+    image: impact_api
+    container_name: impact-api
+    command: /scripts/entrypoint.sh
+    env_file:
+      - .env
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+  db:
+    container_name: db
+    image: mariadb:10.6
+    environment:
+      MARIADB_ROOT_PASSWORD: root
+    ports:
+      - 3306:3306
