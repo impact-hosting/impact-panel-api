@@ -2,8 +2,8 @@
 
 cd /impact
 
-go build -o ./dest/impact_api
+go build -o ./impact_api
 
-bash ./dest/impact_api &
+bash ./impact_api &
 
 /bin/bash

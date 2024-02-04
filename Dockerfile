@@ -8,7 +8,7 @@ RUN mkdir /var/log/impact
 COPY go.sum /impact
 COPY go.mod /impact
 COPY main.go /impact
-COPY ./src /impact/src
+COPY ./src /impact
 COPY ./scripts /scripts
 
 WORKDIR /impact
