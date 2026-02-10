@@ -25,5 +25,5 @@ func main() {
 		panic(err)
 	}
 
-	engine.Run(fmt.Sprintf(":%s", os.Getenv("PORT")))
+	engine.Run(fmt.Sprintf(":%s", os.Getenv("API_PORT")))
 }

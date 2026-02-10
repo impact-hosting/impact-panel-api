@@ -4,8 +4,13 @@ services:
     image: impact_api
     container_name: impact-api
     command: /scripts/entrypoint.sh
-    env_file:
-      - .env
+    environment:
+      - API_PORT=3000
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=impact_api
+      - DB_USER=root
+      - DB_PASSWORD=
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -17,6 +22,7 @@ services:
     container_name: db
     image: mariadb:10.6
     environment:
-      MARIADB_ROOT_PASSWORD: root
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: true
+      MARIADB_DATABASE: impact_api
     ports:
       - 3306:3306

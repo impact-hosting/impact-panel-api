@@ -2,8 +2,12 @@
 
 cd /impact
 
+
+echo "Building API"
 go build -o ./impact_api
+chmod +x ./impact_api
 
-bash ./impact_api &
+bash /scripts/setup_db.sh
 
-/bin/bash
+echo "Starting API"
+./impact_api
